@@ -61,7 +61,8 @@ public class YuYueCheerPlugin : BasePlugin, IPluginConfig<YuYueCheerPluginConfig
                 CsTeam.Terrorist => ChatColors.Red,
                 _ => ChatColors.White
             };
-            Server.PrintToChatAll($"{Localizer["芜湖", (commandPlayer?.PlayerName ?? "Console"), (teamColor)]}");
+
+            Server.PrintToChatAll($"{ChatColors.Lime}{commandPlayer?.PlayerName}{ChatColors.White}:{ChatColors.Blue}{Localizer["lang.chatall.cheer", (commandPlayer?.PlayerName ?? "Console"), (teamColor)]}{ChatColors.White}");
         });
     }
 
