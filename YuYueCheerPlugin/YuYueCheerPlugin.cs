@@ -32,7 +32,7 @@ public class YuYueCheerPlugin : BasePlugin, IPluginConfig<YuYueCheerPluginConfig
         {
             if (Config.CheerSounds.Count == 0)
             {
-                info.ReplyToCommand(Localizer["lang.plugin.didnotload"]);
+                info.ReplyToCommand(Localizer["插件未加载"]);
                 return;
             }
 
@@ -41,8 +41,8 @@ public class YuYueCheerPlugin : BasePlugin, IPluginConfig<YuYueCheerPluginConfig
                 if (LastCheer.TryGetValue(commandPlayer, out var lastCheer) &&
                     DateTimeOffset.Now - lastCheer < TimeSpan.FromSeconds(Config.CooldownSeconds))
                 {
-                    info.ReplyToCommand($"{Localizer["lang.chat.cooldown", (Config.CooldownSeconds)]}");
-                    commandPlayer.PrintToCenter(Localizer["lang.center.cooldown"]);
+                    info.ReplyToCommand($"{Localizer["聊天冷却中", (Config.CooldownSeconds)]}");
+                    commandPlayer.PrintToCenter(Localizer["聊天冷却中"]);
                     return;
                 }
 
@@ -61,7 +61,7 @@ public class YuYueCheerPlugin : BasePlugin, IPluginConfig<YuYueCheerPluginConfig
                 CsTeam.Terrorist => ChatColors.Red,
                 _ => ChatColors.White
             };
-            Server.PrintToChatAll($"{Localizer["lang.chatall.cheer", (commandPlayer?.PlayerName ?? "Console"), (teamColor)]}");
+            Server.PrintToChatAll($"{Localizer["芜湖", (commandPlayer?.PlayerName ?? "Console"), (teamColor)]}");
         });
     }
 

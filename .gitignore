@@ -20,3 +20,6 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+/YuYueCheerPlugin/obj
+/YuYueCheerPlugin/.vs/YuYueCheerPlugin
+/YuYueCheerPlugin/bin/Debug/net8.0
